@@ -1,2 +1,2 @@
 #include "pch.h"
-#include "EraseEverySecondSolver.h"
+#include "array_erase_every_second.h"
