@@ -64,9 +64,11 @@ vector<string> array_erase_every_second(const vector<string>& array)
 	if (array.size() < 2)
 		return vector<string>(array);
 
+	// Массив после выполнения операции
 	auto affected_array = vector<string>(array.size() / 2);
 
-	for (auto i = 1; i < static_cast<int>(array.size()); i += 2)
+	// Копируем 1ый, 3ий, 5ый и т.д. элемент массива в новый массив
+	for (auto i = 0; i < static_cast<int>(array.size()); i += 2)
 		affected_array[i / 2] = array[i];
 
 	return affected_array;
