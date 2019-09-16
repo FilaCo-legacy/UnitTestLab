@@ -19,7 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{6233bdbc-6f91-4645-84b6-e58e0bae3ab0}</ProjectGuid>
+    <ProjectGuid>{c80225b9-780e-4ff5-89f5-9b2cd0f35cd9}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <WindowsTargetPlatformVersion>10.0.18362.0</WindowsTargetPlatformVersion>
     <ConfigurationType>Application</ConfigurationType>
@@ -45,12 +45,12 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Array_EraseEverySecond\Array_EraseEverySecond.vcxproj">
-      <Project>{a39cf775-0f67-4a6b-9be5-b9f3c440642c}</Project>
-    </ProjectReference>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <ProjectReference Include="..\ArrayEraseEverySecond\ArrayEraseEverySecond.vcxproj">
+      <Project>{619adc0f-5276-4c6d-8060-7b4ba233bd6b}</Project>
+    </ProjectReference>
   </ItemGroup>
   <ItemDefinitionGroup />
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

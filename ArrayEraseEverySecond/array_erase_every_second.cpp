@@ -13,7 +13,7 @@ vector<string> array_input_cin()
 	// Итоговый массив из строки
 	vector<string> input_arr;
 	
-	cout << "Введите элементы массива в строку через запятую. Чтобы закончить ввод - нажмите Enter\n";
+	cout << "Введите элементы массива в строку через запятую. Чтобы закончить ввод нажмите Enter\n";
 
 	// Считываем всю входную строку
 	getline(cin, input_str);
@@ -37,6 +37,9 @@ vector<string> array_input_cin()
 		buf_element.clear();
 	}
 
+	if (!buf_element.empty())
+		input_arr.emplace_back(buf_element);
+	
 	return input_arr;
 }
 

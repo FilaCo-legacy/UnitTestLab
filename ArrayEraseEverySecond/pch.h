@@ -9,7 +9,6 @@
 
 // Добавьте сюда заголовочные файлы для предварительной компиляции
 #include "framework.h"
-
 #include "array_erase_every_second.h"
 
 #endif //PCH_H

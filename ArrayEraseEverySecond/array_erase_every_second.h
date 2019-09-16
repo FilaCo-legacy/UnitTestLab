@@ -4,7 +4,7 @@
 #include <vector>
 
 // Возвращает копию массива, в которой удалён каждый второй элемент
-std::vector<std::string> array_erase_every_second(std::vector<std::string> array);
+std::vector<std::string> array_erase_every_second(const std::vector<std::string>& array);
 
 // Считывает элементы массива с консоли
 std::vector<std::string> array_input_cin();
