@@ -40,8 +40,14 @@ vector<string> array_input_cin()
 	return input_arr;
 }
 
-void array_output_cout(std::vector<std::string> array)
+void array_output_cout(vector<string> array)
 {
+	if (array.empty())
+	{
+		cout << "[]\n";
+		return;
+	}
+
 	cout << '[';
 
 	for (auto i = 0; i < static_cast<int>(array.size()) - 1; ++i)
@@ -49,6 +55,21 @@ void array_output_cout(std::vector<std::string> array)
 		cout << '"' << array[i] << "\", ";
 	}
 
-	cout << '"' << array.back() << "\"]";
+	cout << '"' << array.back() << "\"]\n";
 }
+
+vector<string> array_erase_every_second(const vector<string>& array)
+{
+	// Если в массиве менее двух элементов, то операция на него не повлияет
+	if (array.size() < 2)
+		return vector<string>(array);
+
+	auto affected_array = vector<string>(array.size() / 2);
+
+	for (auto i = 1; i < static_cast<int>(array.size()); i += 2)
+		affected_array[i / 2] = array[i];
+
+	return affected_array;
+}
+
 

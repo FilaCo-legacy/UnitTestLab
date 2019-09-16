@@ -3,11 +3,11 @@
 #include <string>
 #include <vector>
 
-// Удаляет каждый второй элемент из заданного массива
+// Возвращает копию массива, в которой удалён каждый второй элемент
 std::vector<std::string> array_erase_every_second(std::vector<std::string> array);
 
 // Считывает элементы массива с консоли
-std::vector<std::string> array_input_console();
+std::vector<std::string> array_input_cin();
 
 // Выводит элементы массива на консоль
-void array_output_console(std::vector<std::string> array);
+void array_output_cout(std::vector<std::string> array);
