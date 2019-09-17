@@ -2,33 +2,134 @@
 
 TEST(ArrayEraseEverySecond, ArrayIsEmpty_EmptyArrayReturned) {
 	// arrange
-	auto input_str = "";
+	const auto input_str = "";
 	auto arr = std::vector<std::string>();
 	auto result = std::vector<std::string>();
 	
-	std::streambuf* backup;
-	std::istringstream oss(input_str);
-	backup = std::cin.rdbuf();
+	const std::istringstream oss(input_str);
 	std::cin.rdbuf(oss.rdbuf());
 	
 	// act
 	arr = array_input_cin();
 	result = array_erase_every_second(arr);
+	array_output_cout(result);
 	
 	// assert
 	ASSERT_EQ(arr, result);
 }
-//
-//TEST(ArrayEraseEverySecond, ArrayIsEmpty_EmptyArrayReturned) {
-//	// arrange
-//	auto input_arr = std::vector<std::string>();
-//
-//	// act
-//	auto result_arr = array_erase_every_second(input_arr);
-//
-//	// assert
-//	ASSERT_TRUE(result_arr.empty());
-// }
+
+TEST(ArrayEraseEverySecond, ArrayWithOneElement_ArrayWithoutChangesReturned) {
+	// arrange
+	const auto input_str = "   aa";
+	auto arr = std::vector<std::string>();
+	auto result = std::vector<std::string>();
+
+	const std::istringstream oss(input_str);
+	std::cin.rdbuf(oss.rdbuf());
+
+	// act
+	arr = array_input_cin();
+	result = array_erase_every_second(arr);
+	array_output_cout(result);
+
+	// assert
+	ASSERT_EQ(arr, result);
+ }
+
+TEST(ArrayEraseEverySecond, ArrayWithTwoElements_AffectedArrayReturned) {
+	// arrange
+	const auto input_str = "1.2; 2.5, 3.5";
+	auto arr = std::vector<std::string>();
+	auto result = std::vector<std::string>();
+	const std::vector<std::string> expected{"1.2; 2.5"};
+
+	const std::istringstream oss(input_str);
+	std::cin.rdbuf(oss.rdbuf());
+
+	// act
+	arr = array_input_cin();
+	result = array_erase_every_second(arr);
+	array_output_cout(result);
+
+	// assert
+	ASSERT_EQ(result,expected);
+}
+
+TEST(ArrayEraseEverySecond, ArrayEmptyElementEnd_ElementProccessed) {
+	// arrange
+	const auto input_str = "1.2        - 23 125; 285,";
+	auto arr = std::vector<std::string>();
+	auto result = std::vector<std::string>();
+	std::vector<std::string> expected{ "1.2        - 23 125; 285" };
+
+	const std::istringstream oss(input_str);
+	std::cin.rdbuf(oss.rdbuf());
+
+	// act
+	arr = array_input_cin();
+	result = array_erase_every_second(arr);
+	array_output_cout(result);
+
+	// assert
+	ASSERT_EQ(expected, result);
+}
+
+TEST(ArrayEraseEverySecond, ArrayEmptyElementBegin_ElementProccessed) {
+	// arrange
+	const auto input_str =", 1.2 - 23 125; 285";
+	auto arr = std::vector<std::string>();
+	auto result = std::vector<std::string>();
+	std::vector<std::string> expected{ "" };
+
+	const std::istringstream oss(input_str);
+	std::cin.rdbuf(oss.rdbuf());
+
+	// act
+	arr = array_input_cin();
+	result = array_erase_every_second(arr);
+	array_output_cout(result);
+
+	// assert
+	ASSERT_EQ(expected, result);
+}
+
+TEST(ArrayEraseEverySecond, ArrayEmptyElementMiddle_ElementProccessed) {
+	// arrange
+	const auto input_str = "aab,1235,,213.123,b^2-4ac";
+	auto arr = std::vector<std::string>();
+	auto result = std::vector<std::string>();
+	const std::vector<std::string> expected{ "aab", "", "b^2-4ac" };
+
+	const std::istringstream oss(input_str);
+	std::cin.rdbuf(oss.rdbuf());
+
+	// act
+	arr = array_input_cin();
+	result = array_erase_every_second(arr);
+	array_output_cout(result);
+
+	// assert
+	ASSERT_EQ(result, expected);
+}
+
+TEST(ArrayEraseEverySecond, ArrayIntegersGiven_AffectedArrayReturned) {
+	// arrange
+	const auto input_str = "1,2,3,4,5,-10,-5,2,-150";
+	auto arr = std::vector<std::string>();
+	auto result = std::vector<std::string>();
+	const std::vector<std::string> expected{ "1", "3", "5", "-5", "-150" };
+
+	const std::istringstream oss(input_str);
+	std::cin.rdbuf(oss.rdbuf());
+
+	// act
+	arr = array_input_cin();
+	result = array_erase_every_second(arr);
+	array_output_cout(result);
+
+	// assert
+	ASSERT_EQ(result, expected);
+}
 
 int main(int argc, char* argv[])
 {

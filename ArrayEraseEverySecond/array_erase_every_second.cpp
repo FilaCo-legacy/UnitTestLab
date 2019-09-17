@@ -8,10 +8,14 @@ vector<string> array_input_cin()
 {
 	// Входная строка
 	string input_str;
+	
 	// Элемент для промежуточного хранения элементов массива
 	string buf_element;
+	
 	// Итоговый массив из строки
 	vector<string> input_arr;
+
+	size_t cnt_commas = 0;
 	
 	cout << "Введите элементы массива в строку через запятую. Чтобы закончить ввод нажмите Enter\n";
 
@@ -27,17 +31,16 @@ vector<string> array_input_cin()
 			continue;
 		}
 
-		// Если буфер пуст, то значит элемент пропущен
-		if (buf_element.empty())
-			throw exception("Массив задан некорректно, операция невозможна");
-
+		++cnt_commas;
+		
 		// Добавляем новый элемент
 		input_arr.emplace_back(buf_element);
+		
 		// Очищаем буфер
 		buf_element.clear();
 	}
 
-	if (!buf_element.empty())
+	if (cnt_commas > input_arr.size() - 1)
 		input_arr.emplace_back(buf_element);
 	
 	return input_arr;
@@ -68,7 +71,7 @@ vector<string> array_erase_every_second(const vector<string>& array)
 		return vector<string>(array);
 
 	// Массив после выполнения операции
-	auto affected_array = vector<string>(array.size() / 2);
+	auto affected_array = vector<string>((array.size() + 1) / 2);
 
 	// Копируем 1ый, 3ий, 5ый и т.д. элемент массива в новый массив
 	for (auto i = 0; i < static_cast<int>(array.size()); i += 2)
