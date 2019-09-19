@@ -4,7 +4,7 @@
 
 using namespace std;
 
-vector<string> array_input_cin()
+vector<string> ArrayInputCin()
 {
 	// Входная строка
 	string input_str;
@@ -46,7 +46,7 @@ vector<string> array_input_cin()
 	return input_arr;
 }
 
-void array_output_cout(vector<string> array)
+void ArrayOutputCout(vector<string> array)
 {
 	if (array.empty())
 	{
@@ -64,7 +64,7 @@ void array_output_cout(vector<string> array)
 	cout << '"' << array.back() << "\"]\n";
 }
 
-vector<string> array_erase_every_second(const vector<string>& array)
+vector<string> ArrayEraseEverySecond(const vector<string>& array)
 {
 	// Если в массиве менее двух элементов, то операция на него не повлияет
 	if (array.size() < 2)

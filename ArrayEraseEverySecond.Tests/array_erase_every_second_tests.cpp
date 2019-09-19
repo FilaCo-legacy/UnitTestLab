@@ -10,9 +10,9 @@ TEST(ArrayEraseEverySecond, ArrayIsEmpty_EmptyArrayReturned) {
 	std::cin.rdbuf(oss.rdbuf());
 	
 	// act
-	arr = array_input_cin();
-	result = array_erase_every_second(arr);
-	array_output_cout(result);
+	arr = ArrayInputCin();
+	result = ArrayEraseEverySecond(arr);
+	ArrayOutputCout(result);
 	
 	// assert
 	ASSERT_EQ(arr, result);
@@ -28,9 +28,9 @@ TEST(ArrayEraseEverySecond, ArrayWithOneElement_ArrayWithoutChangesReturned) {
 	std::cin.rdbuf(oss.rdbuf());
 
 	// act
-	arr = array_input_cin();
-	result = array_erase_every_second(arr);
-	array_output_cout(result);
+	arr = ArrayInputCin();
+	result = ArrayEraseEverySecond(arr);
+	ArrayOutputCout(result);
 
 	// assert
 	ASSERT_EQ(arr, result);
@@ -47,9 +47,9 @@ TEST(ArrayEraseEverySecond, ArrayWithTwoElements_AffectedArrayReturned) {
 	std::cin.rdbuf(oss.rdbuf());
 
 	// act
-	arr = array_input_cin();
-	result = array_erase_every_second(arr);
-	array_output_cout(result);
+	arr = ArrayInputCin();
+	result = ArrayEraseEverySecond(arr);
+	ArrayOutputCout(result);
 
 	// assert
 	ASSERT_EQ(result,expected);
@@ -66,9 +66,9 @@ TEST(ArrayEraseEverySecond, ArrayEmptyElementEnd_ElementProccessed) {
 	std::cin.rdbuf(oss.rdbuf());
 
 	// act
-	arr = array_input_cin();
-	result = array_erase_every_second(arr);
-	array_output_cout(result);
+	arr = ArrayInputCin();
+	result = ArrayEraseEverySecond(arr);
+	ArrayOutputCout(result);
 
 	// assert
 	ASSERT_EQ(expected, result);
@@ -85,9 +85,9 @@ TEST(ArrayEraseEverySecond, ArrayEmptyElementBegin_ElementProccessed) {
 	std::cin.rdbuf(oss.rdbuf());
 
 	// act
-	arr = array_input_cin();
-	result = array_erase_every_second(arr);
-	array_output_cout(result);
+	arr = ArrayInputCin();
+	result = ArrayEraseEverySecond(arr);
+	ArrayOutputCout(result);
 
 	// assert
 	ASSERT_EQ(expected, result);
@@ -104,9 +104,9 @@ TEST(ArrayEraseEverySecond, ArrayEmptyElementMiddle_ElementProccessed) {
 	std::cin.rdbuf(oss.rdbuf());
 
 	// act
-	arr = array_input_cin();
-	result = array_erase_every_second(arr);
-	array_output_cout(result);
+	arr = ArrayInputCin();
+	result = ArrayEraseEverySecond(arr);
+	ArrayOutputCout(result);
 
 	// assert
 	ASSERT_EQ(result, expected);
@@ -123,9 +123,9 @@ TEST(ArrayEraseEverySecond, ArrayIntegersGiven_AffectedArrayReturned) {
 	std::cin.rdbuf(oss.rdbuf());
 
 	// act
-	arr = array_input_cin();
-	result = array_erase_every_second(arr);
-	array_output_cout(result);
+	arr = ArrayInputCin();
+	result = ArrayEraseEverySecond(arr);
+	ArrayOutputCout(result);
 
 	// assert
 	ASSERT_EQ(result, expected);
