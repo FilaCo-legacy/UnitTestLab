@@ -16,7 +16,7 @@ public:
 	static constexpr double kEps = 1e-16;
 
 	// ѕоиск корней заданного квадратного уравнени€
-	Result FindRoots(double& first_root, double& second_root);
+	Result FindRoots(double& first_root, double& second_root) const;
 
 	//  онструктор, который получает на вход 3 параметра квадратного уравнени€
 	QuadraticEquation(const double& a, const double& b, const double& c) : a_(a), b_(b), c_(c) {}
