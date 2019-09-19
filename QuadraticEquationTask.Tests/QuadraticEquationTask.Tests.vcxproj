@@ -45,12 +45,12 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\QuadraticEquationSolve\QuadraticEquationSolve.vcxproj">
-      <Project>{6523dd06-b75b-45bf-a76e-0c8d6d68bb90}</Project>
-    </ProjectReference>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <ProjectReference Include="..\QuadraticEquationTask\QuadraticEquationTask.vcxproj">
+      <Project>{6523dd06-b75b-45bf-a76e-0c8d6d68bb90}</Project>
+    </ProjectReference>
   </ItemGroup>
   <ItemDefinitionGroup />
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

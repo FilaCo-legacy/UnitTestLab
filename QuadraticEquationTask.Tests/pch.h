@@ -6,4 +6,4 @@
 #pragma once
 
 #include "gtest/gtest.h"
-#include "../QuadraticEquationSolve/pch.h"
+#include "../QuadraticEquationTask/pch.h"
