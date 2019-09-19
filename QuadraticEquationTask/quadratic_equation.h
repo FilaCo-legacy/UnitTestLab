@@ -16,12 +16,15 @@ public:
 	static constexpr double kEps = 1e-16;
 
 	// Поиск корней заданного квадратного уравнения
-	Result FindRoots(double& first_root, double& second_root) const;
+	// В случае двух корней возвращает сначала меньший
+	// В случае отсутствия корней или их бесконечного кол-ва не меняет значения в параметрах
+	Result FindRoots(double& root1, double& root2) const;
 
 	// Конструктор, который получает на вход 3 параметра квадратного уравнения
 	QuadraticEquation(const double& a, const double& b, const double& c) : a_(a), b_(b), c_(c) {}
 	
 private:
+	// Параметры квадратного уравнения
 	double a_, b_, c_;
 
 	double Discriminant() const { return b_ * b_ - 4 * a_ * c_; }
