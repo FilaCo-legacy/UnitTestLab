@@ -9,5 +9,7 @@
 
 // Добавьте сюда заголовочные файлы для предварительной компиляции
 #include "framework.h"
+#include "Cell.h"
+#include "Queen.h"
 
 #endif //PCH_H

@@ -1,33 +1,19 @@
 #pragma once
 
-namespace queen_problem {
-	enum Verticals {
-		A = 1,
-		B,
-		C,
-		D,
-		E,
-		F,
-		G,
-		H
-	};
+namespace queens_problem {
+	class Cell {
+	public:
+		Cell(const char& x, const int& y);
 
-	enum Horizontals {
-		ONE = 1,
-		TWO,
-		THREE,
-		FOUR,
-		FIVE,
-		SIX,
-		SEVEN,
-		EIGHT
-	};
+		void set_x(const char& x);
+		void set_y(const int& y);
 
-	struct Cell {
-		Verticals x;
-		Horizontals y;
+		int get_x() const;
+		int get_y() const;
+	private:
+		int x_{};
+		int y_{};
 
-		Cell(const Verticals x, const Horizontals y) : x(x), y(y) {}
 	};
 }
 
