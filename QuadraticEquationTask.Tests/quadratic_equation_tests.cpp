@@ -1,6 +1,7 @@
 #include "pch.h"
 #include <cmath>
 
+using namespace quadratic_equation;
 // m - минус
 TEST(QuadraticEquation, A0_Bm10_C4_OneRoot_04Returned) {
 	// arrange

@@ -1,5 +1,7 @@
 #include "pch.h"
 
+using namespace array_erase_every_second;
+
 TEST(ArrayEraseEverySecond, ArrayIsEmpty_EmptyArrayReturned) {
 	// arrange
 	const auto input_str = "";
