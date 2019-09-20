@@ -1,31 +1,34 @@
 #pragma once
-enum Verticals{
-	A = 1,
-	B,
-	C,
-	D,
-	E,
-	F,
-	G,
-	H
-};
 
-enum Horizontals {
-	ONE = 1,
-	TWO,
-	THREE,
-	FOUR,
-	FIVE,
-	SIX,
-	SEVEN,
-	EIGHT
-};
+namespace queen_problem {
+	enum Verticals {
+		A = 1,
+		B,
+		C,
+		D,
+		E,
+		F,
+		G,
+		H
+	};
 
-struct Cell
-{
-	Verticals x;
-	Horizontals y;
+	enum Horizontals {
+		ONE = 1,
+		TWO,
+		THREE,
+		FOUR,
+		FIVE,
+		SIX,
+		SEVEN,
+		EIGHT
+	};
 
-	Cell(const Verticals x, const Horizontals y): x(x), y(y){}
-};
+	struct Cell {
+		Verticals x;
+		Horizontals y;
+
+		Cell(const Verticals x, const Horizontals y) : x(x), y(y) {}
+	};
+}
+
 
