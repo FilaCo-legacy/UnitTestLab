@@ -133,6 +133,44 @@ TEST(ArrayEraseEverySecond, ArrayIntegersGiven_AffectedArrayReturned) {
 	ASSERT_EQ(result, expected);
 }
 
+TEST(ArrayEraseEverySecond, ArrayOrderedIntegers_AffectedArrayReturned) {
+	// arrange
+	const auto input_str = "1,2,3,4,5";
+	auto arr = std::vector<std::string>();
+	auto result = std::vector<std::string>();
+	const std::vector<std::string> expected{ "1", "3", "5" };
+
+	const std::istringstream oss(input_str);
+	std::cin.rdbuf(oss.rdbuf());
+
+	// act
+	arr = ArrayInputCin();
+	result = ArrayEraseEverySecond(arr);
+	ArrayOutputCout(result);
+
+	// assert
+	ASSERT_EQ(result, expected);
+}
+
+TEST(ArrayEraseEverySecond, ArrayReverseOrderedIntegers_AffectedArrayReturned) {
+	// arrange
+	const auto input_str = "5,4,3,2,1";
+	auto arr = std::vector<std::string>();
+	auto result = std::vector<std::string>();
+	const std::vector<std::string> expected{ "5", "3", "1" };
+
+	const std::istringstream oss(input_str);
+	std::cin.rdbuf(oss.rdbuf());
+
+	// act
+	arr = ArrayInputCin();
+	result = ArrayEraseEverySecond(arr);
+	ArrayOutputCout(result);
+
+	// assert
+	ASSERT_EQ(result, expected);
+}
+
 int main(int argc, char* argv[])
 {
 	setlocale(LC_ALL, "ru");
